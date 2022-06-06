@@ -40,8 +40,11 @@
 	</build>
 
 	<scm>
+		<connection>
+			scm:git:https://EricRicketts:FW190_can_roll@github.com/EricRicketts/SFGPetClinic.git
+		</connection>
 		<developerConnection>
-			scm:git:git@github.com:EricRicketts/SFGPetClinic.git
+			scm:git:https://EricRicketts:FW190_can_roll@github.com/EricRicketts/SFGPetClinic.git
 		</developerConnection>
 	  <tag>sfg-pet-clinic-0.0.1</tag>
   </scm>
