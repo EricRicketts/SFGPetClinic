@@ -1,7 +1,7 @@
 package guru.springframework.sfgpetclinic;
 
 import guru.springframework.sfgpetclinic.services.OwnerService;
-import guru.springframework.sfgpetclinic.services.VeterinarianService;
+import guru.springframework.sfgpetclinic.services.VetService;
 import guru.springframework.sfgpetclinic.services.map.OwnerServiceMap;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,13 +18,13 @@ class SfgPetClinicApplicationTests {
 
 	@Autowired
 	ApplicationContext context;
-	VeterinarianService veterinarianService;
+	VetService veterinarianService;
 	OwnerService ownerService;
 
 	@BeforeEach
 	public void setUp() {
 		ownerService = context.getBean(OwnerServiceMap.class);
-		veterinarianService = context.getBean(VeterinarianService.class);
+		veterinarianService = context.getBean(VetService.class);
 	}
 	@Test
 	void testOwnerService() {

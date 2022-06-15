@@ -1,11 +1,9 @@
 package guru.springframework.sfgpetclinic.bootstrap;
 
 import guru.springframework.sfgpetclinic.model.Owner;
-import guru.springframework.sfgpetclinic.model.Veterinarian;
+import guru.springframework.sfgpetclinic.model.Vet;
 import guru.springframework.sfgpetclinic.services.OwnerService;
-import guru.springframework.sfgpetclinic.services.VeterinarianService;
-import guru.springframework.sfgpetclinic.services.map.OwnerServiceMap;
-import guru.springframework.sfgpetclinic.services.map.VeterinarianServiceMap;
+import guru.springframework.sfgpetclinic.services.VetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -14,12 +12,12 @@ import org.springframework.stereotype.Component;
 public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
-    private final VeterinarianService veterinarianService;
+    private final VetService vetService;
 
     @Autowired
-    public DataLoader(OwnerService ownerService, VeterinarianService veterinarianService) {
+    public DataLoader(OwnerService ownerService, VetService vetService) {
         this.ownerService = ownerService;
-        this.veterinarianService = veterinarianService;
+        this.vetService = vetService;
     }
 
     @Override
@@ -38,18 +36,18 @@ public class DataLoader implements CommandLineRunner {
 
         ownerService.save(ownerTwo);
 
-        Veterinarian vetOne = new Veterinarian();
+        Vet vetOne = new Vet();
         vetOne.setFirstName("Sam");
         vetOne.setLastName("Axe");
         vetOne.setId(1L);
 
-        veterinarianService.save(vetOne);
+        vetService.save(vetOne);
 
-        Veterinarian vetTwo = new Veterinarian();
+        Vet vetTwo = new Vet();
         vetTwo.setFirstName("Jesse");
         vetTwo.setLastName("Porter");
         vetTwo.setId(2L);
 
-        veterinarianService.save(vetTwo);
+        vetService.save(vetTwo);
     }
 }
