@@ -1,5 +1,6 @@
 package guru.springframework.sfgpetclinic.controllers;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
 
@@ -10,4 +11,10 @@ public class IndexController {
     public String index() {
         return "index";
     }
+
+    @RequestMapping("/oups")
+    public String oupsHandler(Model model) {
+        return "not_implemented";
+    }
 }
+
